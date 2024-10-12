@@ -11,7 +11,7 @@
     
    <main>
         <section>
-            <div class="container">
+            <div class="container p-0">
                 <div class="mt-4">
                      <a href="{{'/livros'}}" class="text-decoration-none text-warning btn-warning p-2 text-white rounded-3">Listagem dos Livros</a>
                 </div>
@@ -22,7 +22,7 @@
                         <div class="col-md-6">
                             <h2 class="text-danger">CRUD LARAVEL</h2>
                             <h3 class="text-white">Livraria Biblioteca Online</h3>
-                            <h5 class="text-white">Adicionar Livro</h5>
+                            <p class="text-white">Cadastre um livro preenchendo os campos que se seguem!</p>
                         </div>
 
                         <div class="col-md-6">

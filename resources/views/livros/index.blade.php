@@ -49,6 +49,7 @@
                           <td>{{$livro->id}}</td>
                           <td>{{$livro->nomelivro}}</td>
                           <td>{{$livro->titulolivro}}</td>
+                          <td><a href="{{route('livros.editar', ['livros' => $livro])}}"></a>Editar</td>
                       </tr>
                     @endforeach
                   </tbody>
