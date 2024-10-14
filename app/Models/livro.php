@@ -9,7 +9,8 @@ class livro extends Model
 {
     protected $fillable =[
         'nomelivro', 
-        'titulolivro', 
+        'paginaslivro', 
         'autorlivro',
+        'categorialivro',
     ];
 }

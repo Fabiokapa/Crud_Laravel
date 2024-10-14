@@ -14,32 +14,24 @@ class LivrosController extends Controller
         return view('livros.index', ['livros' => $livros]);
     } 
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function cadastro()
     {
         return view('livros.cadastro');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
             $data = $request->validate([
                 'nomelivro' => 'required',
-                'titulolivro' => 'required',
+                'paginaslivro' => 'required',
                 'autorlivro' => 'required',
+                'categorialivro' => 'required',
             ]);
 
             $livro_novo = livro::create($data);
             return redirect(route('livros.index'));
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(string $id)
     {
         //
@@ -48,9 +40,9 @@ class LivrosController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function editar(livro $livro)
+    public function editar(livro $livros)
     {
-        //
+        return view('livros.editar', ['livro' => $livros]);
     }
 
     /**

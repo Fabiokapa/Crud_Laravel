@@ -15,41 +15,43 @@
 
     <main>
         <section>
-          <div class="container-fluid">
-              <div class="row">
-                  <div class="container">
-                      <h1>Biblioteca Online</h1>
+          <div class="container mt-2">
+              <div class="bg-warning p-3 d-flex flex-column gap-2 rounded-3">
+                  <div>
+                      <h2 class="text-danger">CRUD LARAVEL</h2>
+                      <h3 class="text-white">Biblioteca Online</h3>
                   </div>
-
-                  <div class="container">
-                      <div>
-                          <a href="{{'livros/cadastro'}}">Adicionar Livros</a>
-                      </div>
-                  </div>
+    
+                    <div>
+                        <a href="{{'livros/cadastro'}}" class="text-white fw-light bg-danger rounded-3 p-2">Adicionar Livros</a>
+                    </div>
               </div>
             </div>
         </section>
 
         <section>
-            <div class="container">
+            <div class="container py-4">
               <table class="table">
                   <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">NOME LIVROS</th>
-                        <th scope="col">TITULO</th>
-                        <th scope="col">AUTOR</th>
+                        <th scope="col" class="text-danger">#</th>
+                        <th scope="col" class="text-danger">NOME LIVROS</th>
+                        <th scope="col" class="text-danger">PAGINAS LIVRO</th>
+                        <th scope="col" class="text-danger">AUTOR</th>
+                        <th scope="col" class="text-danger">CATEGORIA</th>
+                        <th scope="col" class="text-danger">OPC</th>
                       </tr>
                   </thead>
 
                   <tbody>
                     @foreach($livros as $livro)
                       <tr>
-                          <th scope="row">1</th>
                           <td>{{$livro->id}}</td>
                           <td>{{$livro->nomelivro}}</td>
-                          <td>{{$livro->titulolivro}}</td>
-                          <td><a href="{{route('livros.editar', ['livros' => $livro])}}"></a>Editar</td>
+                          <td>{{$livro->paginaslivro}}</td>
+                          <td>{{$livro->autorlivro}}</td>
+                          <td>{{$livro->categorialivro}}</td>
+                          <td><a href="{{route('livros.editar', ['livros' => $livro])}}">Editar</a></td>
                       </tr>
                     @endforeach
                   </tbody>
