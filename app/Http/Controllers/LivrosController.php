@@ -45,19 +45,26 @@ class LivrosController extends Controller
         return view('livros.editar', ['livro' => $livros]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+
+    public function actualizar(livro $livros, Request $request)
     {
-        //
+        $data = $request->validate([
+            'nomelivro' => 'required',
+            'paginaslivro' => 'required',
+            'autorlivro' => 'required',
+            'categorialivro' => 'required',
+        ]);
+
+        $livros->update($data);
+        return redirect(route('livros.index'))->with('sucesso','Registro Actualizado com sucesso');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
-    {
-        //
+    public function deletar(livro $livros)
+    {   
+        $livros->deletar();
+        return redirect(route('livros.index'))->with('Deletado', 'Item deletado com sucesso');
     }
 }

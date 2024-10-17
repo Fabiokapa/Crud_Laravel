@@ -30,6 +30,16 @@
         </section>
 
         <section>
+            <div class="container p-2">
+              @if(session()->has('sucesso'))
+                  <div>
+                      {{session('sucesso')}}
+                  </div>
+              @endif
+            </div>
+        </section>
+
+        <section>
             <div class="container py-4">
               <table class="table">
                   <thead>
@@ -52,6 +62,7 @@
                           <td>{{$livro->autorlivro}}</td>
                           <td>{{$livro->categorialivro}}</td>
                           <td><a href="{{route('livros.editar', ['livros' => $livro])}}">Editar</a></td>
+                          <td><a href="{{route('livros.deletar', ['livros' => $livro])}}">Deletar</a></td>
                       </tr>
                     @endforeach
                   </tbody>
@@ -61,4 +72,4 @@
     </main> 
 
 </body>
-</html>
+</html> 

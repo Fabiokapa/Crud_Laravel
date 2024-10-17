@@ -27,9 +27,9 @@
                         </div>
 
                         <div class="col-md-6">
-                            <form action="" method="post">
+                            <form action="{{route('livros.actualizar', ['livros' => $livro])}}" method="post">
                                 @csrf
-                                @method('post')
+                                @method('put') 
 
                                 <div class="container">
                                     <div class="mb-2 d-flex flex-column gap-3">
@@ -45,7 +45,7 @@
                                         </select>
                                     </div>
                                     <div class="mt-4">
-                                        <input type="submit" value="Adicionar" class="form-control p-2 bg-success text-white">
+                                        <input type="submit" value="Actualizar" class="form-control p-2 bg-success text-white">
                                     </div>
                                 </div>
                             </form>
